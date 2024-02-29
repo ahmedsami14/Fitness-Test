@@ -12,7 +12,11 @@
         "laravel/sanctum": "^3.3",
         "laravel/socialite": "^5.12",
         "laravel/tinker": "^2.8",
-        "league/oauth2-client": "^2.7"
+        "league/oauth2-client": "^2.7",
+        "mailgun/mailgun-php": "^4.1",
+        "symfony/http-client": "^7.0",
+        "symfony/mailer": "^6.4",
+        "symfony/mailgun-mailer": "^7.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

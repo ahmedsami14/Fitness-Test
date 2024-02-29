@@ -11,6 +11,8 @@ use App\Http\Api\Requests\UpdateProfileRequest;
 use App\Http\Api\Requests\VerifyEmailOtpRequest;
 use App\Http\Traits\OtpTrait;
 use Illuminate\Http\Request;
+use App\Mail\MailSender;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Ichtrojan\Otp\Otp;
 
@@ -42,6 +44,8 @@ class ProfileController extends Controller
         $data = [
             'identifier' => $request->email,
         ];
+        $message = $otp->token;
+        Mail::to($request->email)->send(new MailSender($message));
         return new CreatedResponse($data, 'OTP sent successfully');
                 
     }

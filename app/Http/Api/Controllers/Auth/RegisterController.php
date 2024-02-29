@@ -7,6 +7,8 @@ use App\Http\Api\Controllers\Controller;
 use App\Http\Api\Requests\RegisterRequest;
 use App\Models\User;
 use Ichtrojan\Otp\Otp;
+use App\Mail\MailSender;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -25,6 +27,8 @@ class RegisterController extends Controller
         $data = [
             'identifier' => $request->email,
         ];
+        $message = $otp->token;
+        Mail::to($request->email)->send(new MailSender($message));
 
         return new OkResponse($data, 'OTP sent successfully');
     }

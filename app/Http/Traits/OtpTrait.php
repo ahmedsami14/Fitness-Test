@@ -7,6 +7,8 @@ use App\Http\Api\ApiResponses\UnprocessableEntityResponse;
 use Carbon\Carbon;
 use Ichtrojan\Otp\Models\Otp as ModelsOtp;
 use Ichtrojan\Otp\Otp;
+use App\Mail\MailSender;
+use Illuminate\Support\Facades\Mail;
 
 trait OtpTrait
 {
@@ -43,6 +45,8 @@ trait OtpTrait
             $data = [
                 'identifier' => $request->identifier,
             ];
+            $message = $otp->token;
+            Mail::to($request->email)->send(new MailSender($message));
 
             return new OkResponse($data, 'OTP sent successfully');
         }

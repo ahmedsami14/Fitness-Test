@@ -8,6 +8,8 @@ use App\Http\Api\ApiResponses\UnprocessableEntityResponse;
 use App\Http\Api\Controllers\Controller;
 use App\Http\Api\Requests\LoginRequest;
 use App\Models\User;
+use App\Mail\MailSender;
+use Illuminate\Support\Facades\Mail;
 use Ichtrojan\Otp\Otp;
 
 class LoginController extends Controller
@@ -29,6 +31,8 @@ class LoginController extends Controller
             $data = [
                 'identifier' => $request->email,
             ];
+            $message = $otp->token;
+            Mail::to($request->email)->send(new MailSender($message));
             return new CreatedResponse($data, 'OTP sent successfully');
         }
     }
