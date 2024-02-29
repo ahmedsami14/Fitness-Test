@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "b7413e65-b567-4dd6-b501-7208ce182418",
+		"name": "Fitness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8731295"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ahmed test\",\r\n    \"email\": \"test1@test.com\",\r\n    \"fitness_goal\" : 4355\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\": \"test@test.com\",\r\n    \"token\": \"2736\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/otp-register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"otp-register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\": \"test@test.com\",\r\n    \"token\": \"5427\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/otp-login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"otp-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend otp register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\" : \"test1@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/resend-otp-register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"resend-otp-register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend otp login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\" : \"test@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/resend-otp",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"resend-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/logout",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login otp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/otp-login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"otp-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register otp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/otp-register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"otp-register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/profile",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"test update\",\r\n    \"fitness_goal\" : 5161\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/profile",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change email profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"gg@jdl.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/change-email",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"change-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify Email Otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\": \"gg@jdl.com\",\r\n    \"token\": \"3705\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/verify-email-otp",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"verify-email-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resend otp change email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"gg@jdl.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/resend-email-otp",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"resend-email-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change email otp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/change-email",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"change-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "try intgration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/fitbit/auth",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"fitbit",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({",
+					"    key:'Accept', ",
+					"    value:'application/json'",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
